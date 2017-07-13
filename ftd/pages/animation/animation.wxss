@@ -1,0 +1,18 @@
+.animation-box{
+    width: 176px;
+    height:176px;
+     background-color: green
+}
+.time-crl-path {
+    width: 176px;
+    height: 176px;
+     background-color: yellow
+
+}
+
+.crl-dot {
+    width: 9px;
+    height:9px;
+ background-color: red
+
+}

@@ -1,0 +1,6 @@
+<view class="container">
+  <view animation="{{animation}}" class="view">
+  <image src="http://upload.chinaz.com/2015/0911/1441938283514.png"></image></view>
+</view>
+<button type="primary" bindtap="rotate">摇一摇</button>
+<!-- <button type="primary" bindtap="rotate2">旋转2</button> -->

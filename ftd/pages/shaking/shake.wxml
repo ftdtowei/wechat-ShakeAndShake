@@ -1,0 +1,14 @@
+
+<view class="container">
+
+
+  
+  <!-- <text class = 'red'  wx:if="{{speedflag}}">speedflag is {{speedflag}}</text>
+        <text class = 'green' wx:if="{{!speedflag}}">speedflag is {{speedflag}}</text> -->
+
+ <view animation="{{animation}}" class="view"><image src="http://upload.chinaz.com/2015/0911/1441938283514.png"></image></view>
+    
+  
+</view>
+
+  <button bindtap="bindnew" type="primary">电脑演示</button> 
