@@ -6,8 +6,8 @@
   <!-- <text class = 'red'  wx:if="{{speedflag}}">speedflag is {{speedflag}}</text>
         <text class = 'green' wx:if="{{!speedflag}}">speedflag is {{speedflag}}</text> -->
 
- <view animation="{{animation}}" class="view"><image src="http://upload.chinaz.com/2015/0911/1441938283514.png"></image></view>
-  <view  bindtap="closeRedBouns" wx:if="{{speedflag}}"><image src="http://android-artworks.25pp.com/fs08/2017/05/24/10/110_1bfcb857cb471f2d816622d862808ce1_con.png"></image></view>  
+ <view animation="{{animation}}" wx:if="{{!speedflag}}" class="red_bouns_view"><image src="http://upload.chinaz.com/2015/0911/1441938283514.png"></image></view>
+  <view  bindtap="closeRedBouns" wx:if="{{speedflag}}"><image class="red_bouns_img"  src="http://android-artworks.25pp.com/fs08/2017/05/24/10/110_1bfcb857cb471f2d816622d862808ce1_con.png"></image></view>  
   
 </view>
 

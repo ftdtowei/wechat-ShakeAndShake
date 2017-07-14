@@ -21,3 +21,12 @@
 background-color:rgb(46, 49, 50);
 
 }
+.red_bouns_view{
+  z-index: 999;
+
+}
+.red_bouns_img{
+  width:300px;
+height:300px;
+
+}
