@@ -31,7 +31,7 @@ Page({
   },
   
   onLoad: function () {
- 
+
   this.startAccelerometer(this)
 
   },
@@ -74,15 +74,14 @@ Page({
 
             success: function (res) {
               wx.vibrateLong();
-
               that.setData({
                 speedflag: true
               })
 
 
+
             }
-          }) //改变之后 停止监听
-       
+          }) //改变之后 停止监听  
       }
     
       }
@@ -90,7 +89,6 @@ Page({
       last_x : e.x, //更新上次位置
       last_y : e.y,
       last_z : e.z,
-      speedflag: speedflag,
       last_update: curTime//更新上次时间
     })
 },
@@ -114,6 +112,12 @@ Page({
       //输出动画
       animation: this.animation.export()
     })
+  },
+  closeRedBouns:function(){
+    this.setData({
+      speedflag: false
+    })
+    this.startAccelerometer(this)//重启监听
   },
 
     bindViewTap: function () { //跳转函数

@@ -1,7 +1,8 @@
 Page({
   data: {
     text: "Page animation",
-    animation: ''
+    animation: '',
+    speedflag:false
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -47,7 +48,8 @@ Page({
     this.animation.rotate(20).step().rotate(-20).step().rotate(20).step().rotate(-20).step().rotate(20).step().rotate(-20).step().rotate(0).step()
     this.setData({
       //输出动画
-      animation: this.animation.export()
+      animation: this.animation.export(),
+      speedflag:true
     })
   },
   /**
