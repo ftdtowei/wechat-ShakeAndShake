@@ -31,13 +31,20 @@ Page({
   },
   
   onLoad: function () {
+ 
+  this.startAccelerometer(this)
 
-  var that = this 
+  },
+  
+  //开启监听
+  startAccelerometer:function (that){
     wx.startAccelerometer() //开起加速度计事件监听
     wx.onAccelerometerChange(function (res) { //监听事件 
       that.changeSpeed(res)//判断函数
+
     })
   },
+  
   //判断函数
   changeSpeed: function (e) {
     var that = this
@@ -57,20 +64,28 @@ Page({
       
       if (speed * 10 > data.SHAKE_THRESHOLD) { //这个还需要调一下
         
-        speedflag = true
-        console.log("speedchange")
-        console.log(speed)
-        console.log(data.SHAKE_THRESHOLD)
+        // console.log("speedchange")
+        // console.log(speed)
+        // console.log(data.SHAKE_THRESHOLD)
           that.rotate()
-   
 
-        wx.stopAccelerometer() //改变之后 停止监听
+
+          wx.stopAccelerometer({
+
+            success: function (res) {
+              wx.vibrateLong();
+
+              that.setData({
+                speedflag: true
+              })
+
+
+            }
+          }) //改变之后 停止监听
        
       }
     
       }
-
-
     that.setData({
       last_x : e.x, //更新上次位置
       last_y : e.y,
@@ -92,7 +107,7 @@ Page({
 
 
   },
-  //归0
+  //强制归0
   rotate0:function(){
     this.animation.rotate(0).step()
     this.setData({
