@@ -6,7 +6,7 @@ Page({
       last_x:0,//记录上次位置
       last_y:0,
       last_z:0,
-      SHAKE_THRESHOLD : 250, //判断摇动幅度  
+      SHAKE_THRESHOLD : 300, //判断摇动幅度  
       last_update : 0,//上次要摇动时间
       speedflag:false ,//摇动标志位
       animation:'',
@@ -62,11 +62,11 @@ Page({
       // console.log(speed)
       // console.log(data.SHAKE_THRESHOLD)
       
-      if (speed * 10 > data.SHAKE_THRESHOLD) { //这个还需要调一下
+      if (speed*5  > data.SHAKE_THRESHOLD) { //这个还需要调一下
         
-        // console.log("speedchange")
-        // console.log(speed)
-        // console.log(data.SHAKE_THRESHOLD)
+        console.log("speedchange")
+        console.log(speed)
+        console.log(data.SHAKE_THRESHOLD)
           that.rotate()
 
 
