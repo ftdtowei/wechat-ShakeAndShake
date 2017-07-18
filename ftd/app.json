@@ -1,9 +1,8 @@
 {
   "pages":[
+    "pages/shaking/shake",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/shaking/shake",
-    "pages/animation/animation",
     "pages/animation2/animation"
   ],
   "window":{

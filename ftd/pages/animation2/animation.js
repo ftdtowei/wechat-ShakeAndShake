@@ -49,7 +49,7 @@ Page({
     this.setData({
       //输出动画
       animation: this.animation.export(),
-      speedflag:true
+      // speedflag:true
     })
   },
   /**

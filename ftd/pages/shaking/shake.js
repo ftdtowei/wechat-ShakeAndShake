@@ -74,10 +74,10 @@ Page({
 
             success: function (res) {
               wx.vibrateLong();
-              that.setData({
-                speedflag: true
-              })
-
+              // that.setData({
+              //   speedflag: true
+              // })
+              console.log(that.animation)
 
 
             }

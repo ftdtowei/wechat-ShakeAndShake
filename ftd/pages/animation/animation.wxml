@@ -1,4 +1,0 @@
-<view class='animation-box'>
-    <view class = 'time-crl-path'></view>
-    <view class = 'crl-dot' animation='{{dotAnData}}'></view>
-</view>

@@ -5,4 +5,3 @@
 v1.1
   摇动出现红包
   增加震动
-test 不输入账号push  test again
