@@ -1,0 +1,24 @@
+<view wx:if="{{ticketPop}}">
+<view class="ticket-pop">
+  <view class="pre-box" wx:if="{{ticketPop=='pre'}}">
+    <view class="title">恭喜!</view>
+    <view class="info">卡券礼包砸中你了</view>
+    <view class="present-box">
+      <image src="/images/present.jpg"/>
+    </view>
+    <button class="main-btn" bindtap="getTicket">立即打开</button>
+  </view>
+
+  <view class="res-box" wx:if="{{ticketPop=='res'}}">
+    <view class="title">恭喜，中奖了</view>
+    <view class="info">抽中卡券</view>
+    <view class="present-box">
+      <image src="/images/present.jpg"/>
+    </view>
+    <button class="main-btn" bindtap="gotoTicket">查看卡包</button>
+  </view>
+
+  <image class="close" src="/images/close.png" bindtap="closeTicketPop"/>
+</view>
+<view class="mask"></view>
+</view>

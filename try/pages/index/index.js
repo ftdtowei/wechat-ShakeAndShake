@@ -115,5 +115,10 @@ Page({
   },
   sleep:function (d){//休眠方法
     for(var t = Date.now();Date.now() - t <= d;);
+  },
+  showRedBonus:function(){
+    this.setData({
+      speedflag: true
+    })
   }
 })

@@ -12,5 +12,8 @@
 <view class="red_bonus" wx:if="{{speedflag}}">
     <view class="red_card" bindtap="closeRedBonus">
     </view>
+
 </view>
+
+
 
