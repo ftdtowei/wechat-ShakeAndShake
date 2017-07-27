@@ -1,0 +1,52 @@
+/**index.wxss**/
+page {
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#5DCEFF), to(#108CDF));
+}
+.text{
+  background:#187BBD;
+  border-radius:100px;
+  color:#fff;
+  margin:30rpx;
+  position:absolute;
+  bottom:-72rpx;
+  left:24%;
+  width:270rpx;
+  height:90rpx;
+  text-align:center;
+  font-size: 1.3em;
+  line-height:90rpx;
+}
+.container{
+  position:fixed;
+  left:50rpx;
+  bottom:10%;
+}
+
+.bg{
+  width:668rpx;
+  height:848rpx;
+}
+.phone{
+  position:absolute;
+  z-index:2;
+  top:38%;
+  left:37%;
+}
+.surprise{
+  position:relative;
+  z-index:1;
+}
+.phone-img{
+  width:190rpx;
+  height:310rpx;
+}
+
+.red_bonus{
+  opacity: 0.5;
+background: #000000;
+}
+.red_card{
+  width: 1000rpx;
+  height: 1000rpx;
+  background: #fff;
+}

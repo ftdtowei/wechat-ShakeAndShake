@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="surprise">
+    <image class="bg" src="../image/bg.png"></image>
+  </view>
+  <view class="phone" animation="{{animation}}">
+    <image class="phone-img" src="../image/phone.png"></image>
+  </view> 
+  <view class="text" bindtap="showRedBonus">摇起来！
+  </view> 
+</view>
+<view class="red_bonus" wx:if="{{speedflag}}">
+    <view class="red_card" bindtap="closeRedBonus">
+    </view>
+</view>
+

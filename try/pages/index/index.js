@@ -1,43 +1,43 @@
+//index.js
+//获取应用实例
+var app = getApp()
 Page({
   data: {
-      x:0,
-      y:0,
-      z:0,
-      last_x:0,//记录上次位置
-      last_y:0,
-      last_z:0,
-      SHAKE_THRESHOLD : 300, //判断摇动幅度
-      last_update : 0,//上次要摇动时间
-      speedflag:false ,//摇动标志位
-      animation:'',
-      checkRotate:false
+    x: 0,
+    y: 0,
+    z: 0,
+    last_x: 0,//记录上次位置
+    last_y: 0,
+    last_z: 0,
+    SHAKE_THRESHOLD: 300, //判断摇动幅度
+    last_update: 0,//上次要摇动时间
+    speedflag: false,//摇动标志位
+    animation: '',
+    checkRotate: false,
 
   },
+
   onReady: function () {
 
     this.animation = wx.createAnimation({
-
       duration: 50,
-
       timingFunction: 'linear',
-
       delay: 0,
-
       transformOrigin: 'left,center right',
       success: function (res) {
         console.log(res)
       }
     })
   },
-
   onLoad: function () {
 
-  this.startAccelerometer(this)
+
+    this.startAccelerometer(this)
 
   },
 
   //开启监听
-  startAccelerometer:function (that){
+  startAccelerometer: function (that) {
     wx.startAccelerometer() //开起加速度计事件监听
     wx.onAccelerometerChange(function (res) { //监听事件
       that.changeSpeed(res)//判断函数
@@ -50,7 +50,7 @@ Page({
     var that = this
     var data = this.data
     var speedflag = false
-    var dotAnFun =''
+
 
     var curTime = new Date().getTime();
     if ((curTime - data.last_update) > 100) { //判断的时间间隔 现在是100毫秒
@@ -62,36 +62,33 @@ Page({
       // console.log(speed)
       // console.log(data.SHAKE_THRESHOLD)
 
-      if (speed*5  > data.SHAKE_THRESHOLD) { //这个还需要调一下
+      if (speed * 5 > data.SHAKE_THRESHOLD) { //这个还需要调一下
 
         console.log("speedchange")
         console.log(speed)
         console.log(data.SHAKE_THRESHOLD)
-          that.rotate()
+        that.rotate()
 
 
-          wx.stopAccelerometer({
+        wx.stopAccelerometer({
 
-            success: function (res) {
-              wx.vibrateLong();
-              // that.setData({
-              //   speedflag: true
-              // })
-              console.log(that.animation)
+          success: function (res) {
+
+            console.log(that.animation)
 
 
-            }
-          }) //改变之后 停止监听
+          }
+        }) //改变之后 停止监听
       }
 
-      }
+    }
     that.setData({
-      last_x : e.x, //更新上次位置
-      last_y : e.y,
-      last_z : e.z,
+      last_x: e.x, //更新上次位置
+      last_y: e.y,
+      last_z: e.z,
       last_update: curTime//更新上次时间
     })
-},
+  },
 
   /**
 * 旋转
@@ -103,31 +100,20 @@ Page({
       animation: this.animation.export()
     })
 
+    this.sleep(1000);//休眠一秒  
+    wx.vibrateLong();//调用震动
+    this.setData({
+      speedflag: true  //显示卡券
+    })
 
   },
-  //强制归0
-  rotate0:function(){
-    this.animation.rotate(0).step()
+  closeRedBonus:function(){
     this.setData({
-      //输出动画
-      animation: this.animation.export()
+      speedflag: false //关闭卡券页面
     })
+    this.startAccelerometer(); //重启监听
   },
-  closeRedBouns:function(){
-    this.setData({
-      speedflag: false
-    })
-    this.startAccelerometer(this)//重启监听
-  },
-
-    bindViewTap: function () { //跳转函数
-    wx.navigateTo({
-      url: '../animation/animation'
-    })
-  },
-      bindnew: function () { //跳转函数
-      wx.navigateTo({
-        url: '../animation2/animation'
-      })
-    }
+  sleep:function (d){//休眠方法
+    for(var t = Date.now();Date.now() - t <= d;);
+  }
 })
